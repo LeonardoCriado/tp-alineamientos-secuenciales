@@ -1,0 +1,280 @@
+accession	cluster_rep	n_mem	n_taxa	nombre_cientifico	cluster_ancestor	taxid	max_score	total_score	query_cover_pct	evalue	pident	acc_len
+6UUR_A	Chain A, Major prion protein [Homo sapiens]	1	1	Homo sapiens	human	9606	68.6	68.6	100	8e-14	100.00	85
+1DWY_A	Chain A, PRION PROTEIN [Bos taurus]	1	1	Bos taurus	domestic cattle	9913	68.2	68.2	100	2e-13	96.88	112
+XLM45692.1	prion, partial [Homo sapiens]	1	1	Homo sapiens	human	9606	67.4	67.4	100	3e-13	96.88	95
+BAG52189.1	unnamed protein product [Homo sapiens]	1	1	Homo sapiens	human	9606	69.3	69.3	100	3e-13	100.00	163
+1Y2S_A	Chain A, Major prion protein [Ovis aries]	6	3	Boreoeutheria	placentals	1437010	67.4	67.4	100	6e-13	93.75	113
+AAQ94049.1	prion protein, partial [Bos taurus]	1	1	Bos taurus	domestic cattle	9913	67.4	67.4	100	7e-13	96.88	130
+BAG56832.1	unnamed protein product [Homo sapiens]	3	2	Hominoidea	apes	314295	68.6	68.6	100	9e-13	100.00	192
+AAD19982.1	prion protein, partial [Tursiops truncatus]	1	1	Tursiops tru...	common bottl...	9739	67.4	67.4	100	1e-12	96.88	141
+4KML_A	Chain A, Major prion protein [Homo sapiens]	1	1	Homo sapiens	human	9606	68.6	68.6	100	2e-12	100.00	241
+1XYQ_A	Chain A, Major prion protein [Sus scrofa]	1	1	Sus scrofa	pig	9823	65.9	65.9	100	2e-12	96.88	111
+4YXH_A	Chain A, Major prion protein [Odocoileus hemionus]	2	2	Cervidae	deer	9850	65.9	65.9	100	3e-12	90.62	135
+1XYJ_A	Chain A, prion protein [Felis catus]	2	2	Carnivora	carnivores	33554	65.1	65.1	100	3e-12	93.75	111
+4HMR_A	Chain A, Major prion protein [Oryctolagus cuniculus]	3	1	Oryctolagus ...	rabbit	9986	65.9	65.9	100	3e-12	93.75	132
+3HAF_A	Chain A, Major prion protein [Homo sapiens]	17	1	Homo sapiens	human	9606	65.5	65.5	100	5e-12	96.88	142
+4YX2_A	Chain A, Major prion protein [Bos taurus]	1	1	Bos taurus	domestic cattle	9913	66.2	66.2	100	5e-12	96.88	163
+NP_001008687.1	major prion protein precursor [Sus scrofa]	300	153	Eutheria	placentals	9347	67.4	67.4	100	6e-12	96.88	257
+2KFL_A	Chain A, Major prion protein [Notamacropus eugenii]	1	1	Notamacropus...	tammar wallaby	9315	64.7	64.7	100	6e-12	87.50	112
+NP_001035117.1	major prion protein precursor [Monodelphis domestica]	4	3	Didelphinae	marsupials	126287	67.4	67.4	100	6e-12	96.88	269
+NP_001258555.1	major prion protein isoform 1 precursor [Bos taurus]	9	5	Laurasiatheria	placentals	314145	67.4	67.4	100	7e-12	96.88	264
+KAB0395372.1	hypothetical protein E2I00_000913 [Balaenoptera physalus]	2	2	Cetacea	whales & dol...	9721	67.4	67.4	100	9e-12	96.88	293
+1Y15_A	Chain A, Major prion protein [Mus musculus]	20	3	Boreoeutheria	placentals	1437010	63.9	63.9	100	1e-11	90.62	112
+AGG53962.1	prion protein, partial [Ovis aries]	4	1	Ovis aries	sheep	9940	63.2	63.2	88	3e-11	92.86	122
+XP_032461337.1	major prion protein isoform X2 [Phocoena sinus]	3	3	Cetacea	whales & dol...	9721	64.7	64.7	100	6e-11	96.88	241
+AAV76035.1	prion protein variant ARQ-G 169, partial [Ovis aries]	11	2	Caprinae	even-toed un...	9963	60.5	60.5	91	8e-11	93.10	58
+DBA45057.1	TPA_inf: prion protein [Dinomys branickii]	20	20	Hystricomorpha	guinea pigs ...	33550	64.3	64.3	100	9e-11	96.88	246
+PNJ14069.1	PRNP isoform 4, partial [Pongo abelii]	10	6	Euarchontogl...	placentals	314146	63.5	63.5	100	1e-10	96.88	217
+1HJM_A	Chain A, MAJOR PRION PROTEIN PRECURSOR [Homo sapiens]	16	1	Homo sapiens	human	9606	61.2	61.2	88	1e-10	100.00	104
+AAY40178.1	prion protein, partial [Ovis aries]	1	1	Ovis aries	sheep	9940	60.8	60.8	91	2e-10	93.10	112
+AAR21603.1	prion protein [Homo sapiens]	3	2	Simiiformes	primates	314293	63.5	63.5	100	2e-10	100.00	277
+XP_067563657.1	major prion protein isoform X1 [Pseudorca crassidens]	9	8	Odontoceti	tooth whales	9722	63.2	63.2	100	2e-10	96.88	245
+7DWV_A	Chain A, Major prion protein [Homo sapiens]	4	2	Hominoidea	apes	314295	62.4	62.4	100	3e-10	100.00	210
+1TQB_A	Chain A, prion protein [Ovis aries]	1	1	Ovis aries	sheep	9940	60.1	60.1	91	3e-10	89.66	102
+XP_066243375.1	major prion protein 1 [Saccopteryx leptura]	4	3	Emballonurinae	bats	461394	62.8	62.8	100	4e-10	96.88	275
+AHG97659.1	prion, partial [Ovis aries]	5	1	Ovis aries	sheep	9940	57.8	57.8	84	7e-10	96.30	57
+AAN16498.1	prion protein, partial [Hylomys suillus]	1	1	Hylomys suillus	short-tailed...	48897	61.2	61.2	100	8e-10	96.88	233
+WQH83456.1	prion protein, partial [Nasua nasua]	1	1	Nasua nasua	ring-tailed ...	9651	59.7	59.7	88	9e-10	92.86	129
+3O79_A	Chain A, Rabbit PrP [Oryctolagus cuniculus]	1	1	Oryctolagus ...	rabbit	9986	58.9	58.9	84	1e-09	92.59	105
+AAD19997.1	prion protein, partial [Budorcas taxicolor]	1	1	Budorcas tax...	takin	37181	60.1	60.1	100	1e-09	96.88	181
+AHG97665.1	prion, partial [Ovis aries]	4	1	Ovis aries	sheep	9940	57.0	57.0	84	2e-09	92.59	58
+2LH8_A	Chain A, Major prion protein [Mesocricetus auratus]	1	1	Mesocricetus...	golden hamster	10036	57.8	57.8	88	2e-09	85.71	104
+NP_001301176.1	major prion protein precursor [Capra hircus]	485	170	Eutheria	placentals	9347	60.1	60.1	88	3e-09	92.86	256
+AGG53964.1	prion protein, partial [Ovis aries]	3	1	Ovis aries	sheep	9940	57.8	57.8	78	4e-09	92.00	123
+1UW3_A	Chain A, PRION PROTEIN [Ovis aries]	1	1	Ovis aries	sheep	9940	56.6	56.6	88	7e-09	89.29	106
+BAF96454.1	prion protein, partial [Ovis aries]	8	2	Laurasiatheria	placentals	314145	56.6	56.6	78	1e-08	92.00	134
+AGX85565.1	prion protein, partial [Ovis aries]	15	1	Ovis aries	sheep	9940	56.2	56.2	78	1e-08	92.00	121
+AZR68397.1	prion protein, partial [Ovis aries]	2	1	Ovis aries	sheep	9940	56.2	56.2	78	2e-08	92.00	132
+BAF96470.1	prion protein, partial [Ovis aries]	8	1	Ovis aries	sheep	9940	56.2	56.2	78	2e-08	92.00	134
+AAQ81751.1	prion protein, partial [Ovis aries]	4	1	Ovis aries	sheep	9940	54.3	54.3	78	2e-08	92.00	67
+BAF96474.1	prion protein, partial [Ovis aries]	2	1	Ovis aries	sheep	9940	55.8	55.8	78	2e-08	92.00	134
+2JOH_A	Chain A, Major prion protein [Oryctolagus cuniculus]	3	1	Oryctolagus ...	rabbit	9986	56.2	56.2	78	2e-08	92.00	148
+WQH83467.1	prion protein, partial [Microtus pyrenaicus]	1	1	Microtus pyr...	Gerbe's vole	269654	56.6	56.6	78	3e-08	88.00	175
+QIV64777.1	prion, partial [Ovis aries]	23	1	Ovis aries	sheep	9940	56.6	56.6	78	3e-08	92.00	169
+AGG68170.1	prion protein, partial [Ovis aries]	2	1	Ovis aries	sheep	9940	55.5	55.5	78	3e-08	88.00	121
+AAD54335.1	prion protein, partial [Varecia variegata variegata]	1	1	Varecia vari...	ruffed lemur	87289	55.5	55.5	78	4e-08	92.00	124
+KAO2661710.1	major prion protein [Mops condylurus]	1	1	Mops condylurus	Angolan free...	258863	57.4	57.4	78	4e-08	92.00	277
+UXP86346.1	prion protein PrP, partial [Rangifer tarandus]	12	1	Rangifer tar...	reindeer	9870	55.5	55.5	78	4e-08	92.00	133
+AGG68167.1	prion protein, partial [Ovis aries]	2	1	Ovis aries	sheep	9940	55.1	55.1	78	4e-08	88.00	122
+XP_036907602.1	major prion protein isoform X2 [Sturnira hondurensis]	5	4	Phyllostomidae	leaf-nosed bats	9415	57.0	57.0	78	4e-08	88.00	249
+WP_142922957.1	hypothetical protein, partial [Staphylococcus haemolyticus]	3	2	cellular org...	cellular org...	131567	55.1	55.1	78	5e-08	84.00	127
+AGG53961.1	prion protein, partial [Ovis aries]	1	1	Ovis aries	sheep	9940	54.7	54.7	78	5e-08	88.00	108
+CBK44083.1	prnp, partial [Sciurus lis]	2	2	Sciurus	rodents	10001	55.8	55.8	78	5e-08	92.00	180
+MIK9500165.1	Major prion protein [Ovis aries]	1	1	Ovis aries	sheep	9940	55.5	55.5	78	5e-08	92.00	145
+AAN16503.1	prion protein, partial [Macrotus californicus]	1	1	Macrotus cal...	California b...	9419	56.2	56.2	78	5e-08	92.00	225
+6FNV_A	Chain A, Major prion protein [Odocoileus hemionus]	1	1	Odocoileus h...	mule deer	9872	55.1	55.1	78	6e-08	92.00	140
+KAM5246489.1	major prion protein [Ctenodactylus gundi]	1	1	Ctenodactylu...	northern gundi	10166	56.6	56.6	78	6e-08	92.00	253
+DBA45279.1	TPA_inf: prion protein, partial [Abrothrix hirta]	1	1	Abrothrix hirta	rodents	1615796	55.5	55.5	78	6e-08	88.00	172
+XP_004645008.1	major prion protein-like [Octodon degus]	1	1	Octodon degus	degu	10160	56.2	56.2	100	7e-08	78.12	225
+CAA74032.1	prion protein, partial [Felis catus]	1	1	Felis catus	domestic cat	9685	54.7	54.7	78	7e-08	92.00	124
+XP_011796427.1	PREDICTED: major prion protein isoform X1 [Colobus angolensis...	3	2	Catarrhini	primates	9526	56.6	56.6	78	7e-08	92.00	287
+AAZ94382.1	prion protein, partial [Panthera tigris altaica]	1	1	Panthera tig...	Amur tiger	74533	53.9	53.9	78	9e-08	88.00	113
+DBA45241.1	TPA_inf: prion protein, partial [Tympanoctomys barrerae]	1	1	Tympanoctomy...	plains visca...	61882	55.8	55.8	78	9e-08	92.00	217
+1TPX_A	Chain A, major prion protein [Ovis aries]	1	1	Ovis aries	sheep	9940	53.9	53.9	78	9e-08	92.00	121
+AEM44422.1	prion protein, partial [Ovis aries]	6	1	Ovis aries	sheep	9940	53.5	53.5	78	1e-07	92.00	97
+XP_023593290.1	major prion protein [Trichechus manatus latirostris]	10	10	Eutheria	placentals	9347	55.8	55.8	78	1e-07	92.00	264
+AFE56204.1	prion protein, partial [Ovis aries]	5	1	Ovis aries	sheep	9940	53.1	53.1	78	1e-07	88.00	89
+XP_011796437.1	PREDICTED: major prion protein isoform X8 [Colobus angolensis...	28	22	Euarchontogl...	placentals	314146	55.5	55.5	78	1e-07	92.00	229
+DBB25528.1	TPA_inf: prion protein [Ateles fusciceps]	1	1	Ateles fusci...	brown-headed...	9508	55.5	55.5	78	1e-07	92.00	255
+QGW35026.1	prion protein, partial [Capra hircus]	51	17	Eutheria	placentals	9347	55.1	55.1	78	1e-07	92.00	212
+DBA45425.1	TPA_inf: prion protein [Eospalax fontanierii]	6	6	Boreoeutheria	placentals	1437010	55.5	55.5	78	2e-07	92.00	245
+ABA60618.1	prion protein, partial [Panthera leo]	4	4	Laurasiatheria	placentals	314145	55.1	55.1	78	2e-07	92.00	213
+NP_001040617.1	major prion protein precursor [Macaca mulatta]	6	6	Simiiformes	primates	314293	55.5	55.5	78	2e-07	92.00	253
+XP_039335543.1	major prion protein [Saimiri boliviensis]	5	5	Boreoeutheria	placentals	1437010	55.1	55.1	78	2e-07	92.00	260
+AXQ60482.1	prion protein, partial [Naemorhedus griseus]	12	4	Laurasiatheria	placentals	314145	54.7	54.7	78	2e-07	92.00	217
+KAN3788127.1	major prion protein [Rhinopoma microphyllum]	1	1	Rhinopoma mi...	Greater mous...	173903	55.1	55.1	78	2e-07	92.00	266
+AAN16489.1	prion protein, partial [Tupaia tana]	3	2	Tupaia	placentals	9394	55.1	55.1	78	2e-07	92.00	254
+QMS79214.1	prion protein, partial [Odocoileus virginianus]	23	6	Eutheria	placentals	9347	54.7	54.7	78	2e-07	92.00	207
+AAD13291.1	prion protein, partial [Lama glama]	4	4	Artiodactyla	even-toed un...	91561	54.3	54.3	78	2e-07	92.00	202
+DBA45256.1	TPA_inf: prion protein [Lophiomys imhausi]	23	23	Muroidea	rodents	337687	54.7	54.7	78	3e-07	88.00	260
+DBA45044.1	TPA_inf: prion protein [Cricetomys gambianus]	5	5	Muroidea	rodents	337687	54.7	54.7	78	3e-07	92.00	257
+1B10_A	Chain A, PROTEIN (PRION PROTEIN) [Mesocricetus auratus]	2	1	Mesocricetus...	golden hamster	10036	53.1	53.1	78	3e-07	84.00	142
+KFO22194.1	Major prion protein 2 [Fukomys damarensis]	6	5	Hystricomorpha	guinea pigs ...	33550	54.3	54.3	78	3e-07	92.00	224
+DBA45144.1	TPA_inf: prion protein, partial [Eonycteris spelaea]	7	7	Yinpterochir...	bats	30559	54.7	54.7	78	3e-07	88.00	250
+XP_048204805.1	major prion protein [Perognathus longimembris pacificus]	8	7	Euarchontogl...	placentals	314146	54.3	54.3	78	3e-07	88.00	246
+ACB46962.1	prion precursor [Otolemur garnettii]	4	3	Galagidae	galagos	40297	54.3	54.3	78	4e-07	92.00	260
+AIP98358.1	prion protein, partial [Petaurista alborufus]	5	5	Boreoeutheria	placentals	1437010	54.3	54.3	78	4e-07	92.00	225
+AAV41879.1	prion protein, partial [Alouatta belzebul]	18	17	Primates	primates	9443	53.9	53.9	78	4e-07	92.00	210
+DBB25550.1	TPA_inf: prion protein, partial [Myotis planiceps]	1	1	Myotis plani...	flat-headed ...	1209081	53.1	53.1	78	4e-07	84.00	148
+XP_006894284.1	PREDICTED: major prion protein [Elephantulus edwardii]	1	1	Elephantulus...	Cape elephan...	28737	54.3	54.3	78	4e-07	88.00	255
+AAN16513.1	prion protein, partial [Macroscelides proboscideus]	1	1	Macroscelide...	short-eared ...	29082	53.9	53.9	78	4e-07	92.00	224
+DBA45062.1	TPA_inf: prion protein [Nesogale talazaci]	1	1	Nesogale tal...	Talazac's sh...	2583312	54.3	54.3	78	4e-07	84.00	264
+UXE43829.1	prion protein, partial [Cervus canadensis]	28	17	Laurasiatheria	placentals	314145	53.9	53.9	78	4e-07	92.00	237
+UVC58669.1	prion protein, partial [Capra hircus]	3	1	Capra hircus	goat	9925	53.5	53.5	78	5e-07	92.00	187
+WQH83452.1	prion protein, partial [Connochaetes gnou]	7	6	Artiodactyla	even-toed un...	91561	53.9	53.9	78	5e-07	92.00	223
+DBA45191.1	TPA_inf: prion protein [Micronycteris hirsuta]	15	13	Yangochiroptera	bats	30560	54.3	54.3	78	5e-07	88.00	273
+KAB1262537.1	Major prion protein [Camelus dromedarius]	1	1	Camelus drom...	Arabian camel	9838	52.4	52.4	75	5e-07	91.67	124
+AAD13289.1	prion protein, partial [Cervus nippon mantchuricus]	3	2	Cervidae	deer	9850	53.5	53.5	78	5e-07	92.00	185
+2N53_A	Chain A, Major prion protein [Ovis aries]	3	1	Ovis aries	sheep	9940	52.8	52.8	78	5e-07	88.00	154
+DBB25376.1	TPA_inf: prion protein [Manis culionensis]	1	1	Manis culion...	Palawan pang...	1836949	53.9	53.9	78	6e-07	92.00	258
+DBB25505.1	TPA_inf: prion protein [Urva javanica]	7	6	Carnivora	carnivores	33554	53.9	53.9	78	6e-07	92.00	261
+GAC3169353.1	major prion protein [Miniopterus fuliginosus]	3	3	Miniopterus	bats	9432	53.9	53.9	78	6e-07	84.00	251
+KAH0513936.1	Major prion protein [Microtus ochrogaster]	2	2	Arvicolinae	rodents	39087	53.9	53.9	78	6e-07	84.00	339
+AAN16495.1	prion protein, partial [Nannospalax ehrenbergi]	2	1	Nannospalax ...	Ehrenberg's ...	30637	53.5	53.5	78	7e-07	92.00	215
+KAN3475639.1	major prion protein isoform 1-T1 [Rhinolophus trifoliatus]	4	4	Rhinolophus	bats	49442	53.5	53.5	78	8e-07	84.00	264
+DBA45334.1	TPA_inf: prion protein [Sorex maritimensis]	6	6	Boreoeutheria	placentals	1437010	53.5	53.5	78	8e-07	88.00	243
+WQH83447.1	prion protein, partial [Mustela lutreola]	10	10	Carnivora	carnivores	33554	53.1	53.1	78	8e-07	92.00	224
+AAN16514.1	prion protein, partial [Tenrec ecaudatus]	1	1	Tenrec ecaud...	tailess tenrec	94439	53.5	53.5	78	8e-07	88.00	237
+ADV35888.1	prion protein, partial [Ovis aries]	18	2	Caprinae	even-toed un...	9963	52.8	52.8	78	8e-07	92.00	185
+1106228A	scrapie prion protein [Mus musculus]	2	1	Mus musculus	house mouse	10090	50.8	50.8	78	8e-07	84.00	78
+KAL4680717.1	hypothetical protein H8959_022658 [Pygathrix nigripes]	1	1	Pygathrix ni...	Black-shanke...	310352	52.8	52.8	78	1e-06	92.00	203
+CBY05848.1	major prion protein, partial [Monodelphis domestica]	1	1	Monodelphis ...	gray short-t...	13616	52.8	52.8	78	1e-06	92.00	213
+NP_001265185.1	major prion protein precursor [Mus musculus]	79	63	Euarchontogl...	placentals	314146	53.1	53.1	78	1e-06	88.00	254
+EPQ12982.1	Major prion protein 2 [Myotis brandtii]	1	1	Myotis brandtii	Brandt's bat	109478	53.1	53.1	78	1e-06	84.00	332
+DBA45278.1	TPA_inf: prion protein [Vicugna pacos huacaya]	1	1	Vicugna paco...	alpaca	273913	53.1	53.1	78	1e-06	92.00	265
+KAL6082426.1	hypothetical protein STEG23_007493 [Scotinomys teguina]	1	1	Scotinomys t...	Alston's bro...	56236	53.1	53.1	78	1e-06	88.00	303
+WQH83466.1	prion protein, partial [Cynomys ludovicianus]	1	1	Cynomys ludo...	black-tailed...	45480	52.4	52.4	78	1e-06	88.00	188
+AZR68291.1	prion protein, partial [Ovis aries]	19	1	Ovis aries	sheep	9940	51.6	51.6	78	1e-06	84.00	137
+WQH83463.1	prion protein, partial [Dromiciops bozinovici]	2	2	Dromiciops	marsupials	33561	52.8	52.8	78	1e-06	88.00	234
+DBA45100.1	TPA_inf: prion protein [Rousettus leschenaultii]	3	3	Rousettus	bats	9406	52.8	52.8	78	1e-06	88.00	239
+4YXL_A	Chain A, Major prion protein [Mesocricetus auratus]	1	1	Mesocricetus...	golden hamster	10036	52.0	52.0	78	1e-06	84.00	166
+DBA45312.1	TPA_inf: prion protein [Tamias sibiricus]	15	15	Eutheria	placentals	9347	52.8	52.8	78	1e-06	88.00	247
+DBA45249.1	TPA_inf: prion protein [Myotis pilosus]	3	3	Myotis	bats	9434	52.8	52.8	78	1e-06	88.00	232
+ACJ06784.1	major prion protein precursor, partial [Peromyscus leucopus]	1	1	Peromyscus l...	white-footed...	10041	52.0	52.0	78	1e-06	88.00	179
+DBA45168.1	TPA_inf: prion protein, partial [Tragelaphus buxtoni]	1	1	Tragelaphus ...	mountain nyala	69296	52.4	52.4	78	1e-06	88.00	193
+WPS71471.1	prion protein [Puma concolor]	13	3	Felidae	cat family	9681	52.4	52.4	78	2e-06	92.00	242
+KAN7626382.1	major prion protein isoform 2-T6 [Antrozous pallidus]	1	1	Antrozous pa...	pallid bat	9440	52.4	52.4	78	2e-06	84.00	252
+XP_019589345.2	major prion protein [Rhinolophus sinicus]	4	3	Rhinolophus	bats	49442	52.4	52.4	78	2e-06	88.00	256
+XP_074064241.1	major prion protein isoform X1 [Macrotis lagotis]	4	3	Metatheria	marsupials	9263	52.4	52.4	78	2e-06	88.00	280
+AAQ81755.1	prion protein, partial [Ovis aries]	2	1	Ovis aries	sheep	9940	48.5	48.5	72	2e-06	91.30	33
+DBA45031.1	TPA_inf: prion protein [Lasiurus cinereus]	40	32	Laurasiatheria	placentals	314145	52.0	52.0	78	3e-06	84.00	268
+XP_038602594.1	major prion protein [Tachyglossus aculeatus]	1	1	Tachyglossus...	Australian e...	9261	51.6	51.6	78	3e-06	88.00	241
+AAN16515.1	prion protein, partial [Amblysomus hottentotus]	1	1	Amblysomus h...	Hottentot go...	9391	51.2	51.2	78	4e-06	88.00	215
+ACJ06783.1	major prion protein precursor, partial [Peromyscus maniculatus...	2	2	Cricetidae	rodents	337677	50.4	50.4	78	5e-06	88.00	156
+XP_080572964.1	major prion protein [Muscardinus avellanarius]	3	3	Gliridae	dormice	30650	51.2	51.2	78	5e-06	84.00	256
+AAQ94041.1	prion protein, partial [Bubalus bubalis]	1	1	Bubalus bubalis	water buffalo	89462	49.3	49.3	72	7e-06	91.30	125
+WQH83442.1	prion protein, partial [Plecotus auritus]	2	2	Vespertilion...	vesper bats	9431	50.4	50.4	78	7e-06	84.00	217
+DBA45088.1	TPA_inf: prion protein [Scalopus aquaticus]	2	2	Talpidae	moles, shrew...	9373	50.4	50.4	81	1e-05	84.62	267
+KAK1337293.1	hypothetical protein QTO34_001919 [Cnephaeus nilssonii]	1	1	Cnephaeus ni...	northern bat	3371016	50.4	50.4	78	1e-05	84.00	333
+DBA45415.1	TPA_inf: prion protein [Jaculus jaculus]	8	7	Myomorpha	mice and others	1963758	50.4	50.4	78	1e-05	84.00	260
+DBB25549.1	TPA_inf: prion protein, partial [Perameles nasuta]	1	1	Perameles na...	long-nosed b...	9344	49.3	49.3	78	2e-05	88.00	186
+XP_051831420.1	major prion protein isoform X1 [Antechinus flavipes]	34	32	Metatheria	marsupials	9263	49.7	49.7	78	2e-05	80.00	281
+DBA45389.1	TPA_inf: prion protein, partial [Cercartetus concinnus]	5	5	Diprotodontia	marsupials	38609	49.3	49.3	78	2e-05	84.00	241
+WQH83459.1	prion protein, partial [Notamacropus rufogriseus]	2	2	Macropodidae	marsupials	9307	49.3	49.3	78	2e-05	84.00	209
+XP_049635307.1	major prion protein isoform X2 [Suncus etruscus]	3	2	Crocidurinae	insectivores	183662	49.3	49.3	81	2e-05	80.77	241
+WDE41686.1	prion protein [Felis catus]	1	1	Felis catus	domestic cat	9685	48.1	48.1	81	5e-05	84.62	224
+AAN16517.1	prion protein, partial [Cyclopes didactylus]	5	3	Vermilingua	placentals	948952	47.0	47.0	66	2e-04	90.48	242
+7YAT_A	Chain A, Major prion protein [Mesocricetus auratus]	1	1	Mesocricetus...	golden hamster	10036	43.5	43.5	72	2e-04	86.96	25
+DBA45166.1	TPA_inf: prion protein [Chaetophractus vellerosus]	4	2	Cingulata	placentals	948951	47.0	47.0	66	2e-04	90.48	254
+DBA45037.1	TPA_inf: prion protein [Bradypus variegatus]	4	3	Folivora	placentals	948953	47.0	47.0	66	2e-04	90.48	261
+XP_045151286.1	major prion protein [Echinops telfairi]	2	2	Tenrecinae	placentals	176113	46.6	46.6	66	3e-04	85.71	280
+ACB46964.1	prion precursor, partial [Ornithorhynchus anatinus]	1	1	Ornithorhync...	platypus	9258	45.4	45.4	81	5e-04	76.92	215
+XP_028921473.1	major prion protein isoform X2 [Ornithorhynchus anatinus]	2	1	Ornithorhync...	platypus	9258	44.7	44.7	81	0.001	76.92	251
+XP_060042845.1	major prion protein [Erinaceus europaeus]	2	2	Erinaceinae	spiny hedgehogs	30577	44.7	44.7	66	0.001	90.48	260
+XP_011796438.1	PREDICTED: major prion protein isoform X9 [Colobus angolensis...	2	2	Cercopithecidae	Old World mo...	9527	44.3	44.3	66	0.002	76.19	228
+AAN16497.1	prion protein, partial [Erinaceus europaeus]	1	1	Erinaceus eu...	western Euro...	9365	43.5	43.5	66	0.003	90.48	226
+1S4T_A	Chain A, Major prion protein [synthetic construct]	1	1	synthetic co...	other sequences	32630	39.3	39.3	56	0.008	88.89	21
+DBA45105.1	TPA_inf: prion protein [Tolypeutes matacus]	2	2	Chlamyphoridae	placentals	1811493	42.4	42.4	66	0.009	80.95	255
+AAQ94050.1	prion protein, partial [Bos taurus]	2	1	Bos taurus	domestic cattle	9913	39.7	39.7	50	0.027	93.75	97
+AAQ94051.1	prion protein, partial [Bos taurus]	6	1	Bos taurus	domestic cattle	9913	40.0	40.0	56	0.031	94.44	132
+7RL4_A	Chain A, Major prion protein [Homo sapiens]	1	1	Homo sapiens	human	9606	36.2	36.2	53	0.78	100.00	126
+PTF44512.1	hypothetical protein BUY60_13210, partial [Staphylococcus...	1	1	Staphylococc...	firmicutes	1282	35.0	35.0	47	2.7	80.00	137
+PTK14737.1	alpha,alpha-trehalase [Staphylococcus saprophyticus]	3	2	Staphylococcus	firmicutes	1279	35.0	35.0	47	3.2	80.00	570
+8DJA_A	Chain A, Major prion protein [Mus musculus]	2	2	Muroidea	rodents	337687	33.9	33.9	56	5.7	88.89	123
+PTG04370.1	hypothetical protein BU656_11595, partial [Staphylococcus...	3	3	Staphylococcus	firmicutes	1279	34.3	34.3	47	6.3	80.00	307
+1U5L_A	Chain A, prion protein [Trachemys scripta]	1	1	Trachemys sc...	pond slider	34903	33.5	33.5	100	7.5	53.12	108
+XP_061448865.1	atrophin-1-like [Rhineura floridana]	1	1	Rhineura flo...	Florida worm...	261503	33.5	63.1	84	11	51.85	618
+WP_123924095.1	hypothetical protein [Vibrio crassostreae]	1	1	Vibrio crass...	g-proteobact...	246167	32.7	32.7	63	23	60.00	223
+AAT68003.1	prion protein PrP, partial [Monodelphis domestica]	1	1	Monodelphis ...	gray short-t...	13616	32.0	32.0	38	31	100.00	119
+HAE61008.1	hypothetical protein [Eubacteriaceae bacterium]	1	1	Eubacteriace...	firmicutes	2049045	32.0	32.0	88	35	39.29	719
+WP_057621904.1	hypothetical protein [Vibrio crassostreae]	1	1	Vibrio crass...	g-proteobact...	246167	32.0	32.0	66	42	52.38	225
+MIA2841537.1	(Fe-S)-binding protein [Desulfosarcinaceae bacterium]	1	1	Desulfosarci...	bacteria	3036616	31.6	31.6	94	58	45.16	303
+MDE2427512.1	hypothetical protein [Burkholderiales bacterium]	1	1	Burkholderia...	b-proteobact...	1891238	31.6	31.6	81	63	53.85	268
+XP_077161493.1	major prion protein-like isoform X2 [Paroedura picta]	2	1	Paroedura picta	lizards & sn...	143630	31.2	31.2	81	69	50.00	277
+WP_330463451.1	FtsX-like permease family protein [Metamycoplasma gateae]	1	1	Metamycoplas...	bacteria	35769	31.2	31.2	78	78	48.00	2786
+1U3M_A	Chain A, prion-like protein [Gallus gallus]	1	1	Gallus gallus	chicken	9031	30.8	30.8	100	78	50.00	117
+XP_079132318.1	LOW QUALITY PROTEIN: IgGFc-binding protein [Melanostigma...	1	1	Melanostigma...	limp eelpout	1091424	31.2	31.2	88	80	42.86	1677
+MDR0739958.1	ABC transporter permease [Mycoplasmataceae bacterium]	1	1	Mycoplasmata...	mycoplasmas	2685873	31.2	31.2	78	85	48.00	1623
+MBK4764887.1	argininosuccinate synthase [Pantoea sp. Brub]	1	1	Pantoea sp. ...	enterobacteria	2601252	30.8	30.8	44	91	78.57	407
+WP_109246932.1	ABC transporter permease [Mycoplasmopsis arginini]	12	3	Mycoplasmops...	bacteria	2094	30.8	30.8	78	91	48.00	2797
+KPK85276.1	MAG: hypothetical protein AMJ81_03840, partial [Phycisphaerae...	1	1	Phycisphaera...	bacteria	1703412	30.8	30.8	63	100	60.00	711
+MDR1991445.1	ABC transporter permease [Mycoplasmataceae bacterium]	1	1	Mycoplasmata...	mycoplasmas	2685873	30.8	30.8	78	105	44.00	1595
+NLF33134.1	RnfABCDGE type electron transport complex subunit B...	1	1	Planctomycet...	bacteria	2026780	30.8	30.8	84	113	48.15	301
+NXP44420.1	PRIO protein [Heliornis fulica]	1	1	Heliornis fu...	sungrebe	54369	30.8	30.8	100	118	50.00	210
+HUU22099.1	ABC transporter permease [Phycisphaerae bacterium]	2	1	Phycisphaera...	bacteria	2026778	30.4	30.4	72	122	52.17	1870
+MHC4873050.1	ABC transporter permease [Planctomycetota bacterium]	1	1	Planctomycet...	bacteria	2026780	30.4	30.4	66	135	42.86	1725
+XP_012821570.1	prion protein isoform X1 [Xenopus tropicalis]	1	1	Xenopus trop...	tropical cla...	8364	30.4	30.4	78	146	52.00	250
+KAL1602744.1	hypothetical protein SLS60_006165 [Paraconiothyrium brasiliense]	1	1	Paraconiothy...	ascomycete f...	300254	30.0	30.0	97	162	45.16	137
+NP_001121414.1	prion protein precursor [Xenopus tropicalis]	2	1	Xenopus trop...	tropical cla...	8364	30.4	30.4	78	168	52.00	224
+KAM8973467.1	major prion protein homolog [Pelodytes ibericus]	1	1	Pelodytes ib...	Iberian pars...	233781	30.0	30.0	72	186	52.17	235
+MBW1889070.1	4Fe-4S binding protein [Deltaproteobacteria bacterium]	1	1	Deltaproteob...	bacteria	2026735	30.0	30.0	94	187	45.16	303
+MIN7850480.1	T9SS outer membrane translocon Sov/SprA [Williamwhitmania sp.]	1	1	Williamwhitm...	CFB group ba...	2038698	30.0	30.0	84	188	48.15	2192
+MHC4981638.1	ABC transporter permease [Planctomycetota bacterium]	1	1	Planctomycet...	bacteria	2026780	30.0	30.0	50	202	68.75	763
+MIN7839824.1	T9SS outer membrane translocon Sov/SprA [Williamwhitmania sp.]	1	1	Williamwhitm...	CFB group ba...	2038698	30.0	30.0	84	206	48.15	1641
+KAJ7362694.1	hypothetical protein DFH08DRAFT_1025065 [Mycena albidolilacea]	1	1	Mycena albid...	basidiomycet...	1033008	30.0	30.0	100	217	40.62	1086
+MCP9487102.1	ABC transporter permease [Candidatus Gaiellasilicea maunaloa]	1	1	Candidatus G...	actinobacteria	2928748	30.0	30.0	72	217	56.52	235
+NDJ52599.1	CBS domain-containing protein [Chloroflexota bacterium]	1	1	Chloroflexot...	GNS bacteria	2026724	30.0	30.0	59	220	57.89	390
+WP_156510363.1	methyl-accepting chemotaxis protein [Labrenzia sp. OB1]	1	1	Labrenzia sp...	a-proteobact...	1561204	29.6	29.6	84	233	44.44	775
+MHD9547300.1	FtsX-like permease family protein [Phycisphaerae bacterium]	1	1	Phycisphaera...	bacteria	2026778	29.6	29.6	91	246	44.83	1844
+MBL0156410.1	hypothetical protein [Bryobacterales bacterium]	1	1	Bryobacteral...	bacteria	2026791	29.6	29.6	63	253	45.00	170
+MEZ4602206.1	4Fe-4S binding protein [Desulfobacterales bacterium]	1	1	Desulfobacte...	bacteria	2044940	29.6	29.6	78	257	50.00	197
+MGU3495871.1	anti-sigma factor family protein [Xanthobacteraceae bacterium...	1	1	Xanthobacter...	a-proteobact...	3388812	29.6	29.6	75	259	45.83	245
+MIN7829639.1	T9SS outer membrane translocon Sov/SprA [Williamwhitmania sp.]	1	1	Williamwhitm...	CFB group ba...	2038698	29.6	29.6	84	262	48.15	657
+MFQ5864149.1	PAS domain-containing sensor histidine kinase [bacterium]	1	1	bacterium	bacteria	1869227	29.6	29.6	66	270	52.38	493
+MDO8635356.1	ABC transporter permease [Dehalococcoidia bacterium]	1	1	Dehalococcoi...	GNS bacteria	2026734	29.6	29.6	56	276	66.67	444
+MHX8268848.1	tellurite resistance TerB family protein [Sedimenticolaceae...	2	2	Gammaproteob...	g-proteobact...	1236	29.6	29.6	75	284	50.00	233
+WP_155194236.1	methyl-accepting chemotaxis protein [Roseibium denhamense]	1	1	Roseibium de...	a-proteobact...	76305	29.3	29.3	81	316	42.31	775
+MCL3779007.1	alpha-L-fucosidase [Prolixibacteraceae bacterium JC049]	1	1	Prolixibacte...	CFB group ba...	2499682	29.3	29.3	72	317	47.83	551
+MCG8579690.1	alpha-L-fucosidase [Bacteroidales bacterium]	1	1	Bacteroidale...	CFB group ba...	2030927	29.3	29.3	72	317	47.83	550
+WP_481108292.1	hypothetical protein [Xanthomonas sp. NCPPB 2933]	1	1	Xanthomonas ...	g-proteobact...	487548	29.3	29.3	81	318	42.31	312
+KAK3259987.1	hypothetical protein CYMTET_31039 [Cymbomonas tetramitiformis]	1	1	Cymbomonas t...	green algae	36881	29.3	29.3	78	324	48.00	2680
+NP_588418.1	protein mug33 [Schizosaccharomyces pombe]	2	1	Schizosaccha...	fission yeast	4896	29.3	29.3	91	341	37.93	336
+WP_411350024.1	glutamine--tRNA ligase/YqeY domain fusion protein [Paenibacill...	2	2	unclassified...	firmicutes	185978	29.3	29.3	47	349	60.00	604
+MIN8617437.1	pyridoxamine 5'-phosphate oxidase family protein [Aeromicrobiu...	1	1	Aeromicrobiu...	high G+C Gra...	1871063	29.3	29.3	84	353	48.15	141
+MBQ9906829.1	hypothetical protein [Oscillospiraceae bacterium]	2	1	Oscillospira...	firmicutes	2485925	29.3	29.3	53	354	58.82	378
+WP_157778241.1	hypothetical protein [Burkholderia thailandensis]	2	2	Burkholderia...	b-proteobact...	119060	29.3	29.3	81	358	42.31	313
+MHC4716459.1	ABC transporter permease [Planctomycetota bacterium]	1	1	Planctomycet...	bacteria	2026780	29.3	29.3	50	410	68.75	418
+MBI9083630.1	RnfABCDGE type electron transport complex subunit B...	1	1	Desulfobacte...	bacteria	2044940	29.3	29.3	94	428	41.94	303
+WP_159935128.1	argininosuccinate synthase [Pantoea sp. Aalb]	1	1	Pantoea sp. ...	enterobacteria	2576762	28.9	28.9	44	462	78.57	408
+MGA2265802.1	M28 family peptidase [Phycisphaerae bacterium]	1	1	Phycisphaera...	bacteria	2026778	28.9	28.9	78	464	40.00	1698
+MXV85364.1	FtsX-like permease family protein [Candidatus Poribacteria...	1	1	Candidatus P...	bacteria	2026781	28.9	28.9	69	478	40.91	1672
+MIJ5413615.1	FtsX-like permease family protein [Candidatus Poribacteria...	2	1	Candidatus P...	bacteria	2026781	28.9	28.9	69	482	40.91	2335
+MDE0323743.1	M28 family peptidase [Candidatus Poribacteria bacterium]	27	2	cellular org...	cellular org...	131567	28.9	28.9	69	492	40.91	2491
+MGL5152527.1	CDP-glycerol glycerophosphotransferase family protein...	1	1	Clostridium sp.	firmicutes	1506	28.9	28.9	56	493	55.56	902
+MDE0684265.1	ABC transporter permease [Candidatus Poribacteria bacterium]	3	1	Candidatus P...	bacteria	2026781	28.9	28.9	69	493	40.91	797
+NXB30750.1	PRIO protein [Eulacestoma nigropectus]	9	9	Passeriformes	song birds	9126	28.9	28.9	100	507	50.00	143
+MGN6287617.1	methyl-accepting chemotaxis protein [Afipia sp.]	2	1	Afipia sp.	a-proteobact...	1871052	28.9	28.9	56	508	61.11	679
+SPO04293.1	probable glycosyl hydrolase [Cephalotrichum gorgonifer]	1	1	Cephalotrich...	ascomycete f...	2041049	28.9	28.9	91	513	46.88	766
+RJP89948.1	MAG: RnfABCDGE type electron transport complex subunit B...	1	1	Desulfobacte...	bacteria	2049433	28.9	28.9	78	522	50.00	298
+MHY1670006.1	sensor histidine kinase [Candidatus Oceanimicrobiales bacterium]	1	1			3477876	28.9	28.9	66	525	42.86	499
+MYB01664.1	FtsX-like permease family protein [Candidatus Poribacteria...	3	1	Candidatus P...	bacteria	2026781	28.9	28.9	69	527	40.91	2089
+MIN4630386.1	HD domain-containing protein [Patescibacteria group bacterium]	1	1	Patescibacte...	bacteria	2052139	28.9	28.9	59	540	52.63	200
+WP_330057481.1	S1C family serine protease [Ruminococcus sp.]	1	1	Ruminococcus...	firmicutes	41978	28.9	28.9	81	540	42.31	581
+KAM9311215.1	major prion protein [Gastrophryne carolinensis]	1	1	Gastrophryne...	eastern narr...	8429	28.9	28.9	72	555	52.17	251
+WP_158600178.1	DUF3857 domain-containing transglutaminase family protein...	6	5	unclassified...	b-proteobact...	2684926	28.9	28.9	56	567	55.56	683
+WP_409302742.1	heme o synthase [Pseudomonas sp. KCJK8993]	3	2	unclassified...	g-proteobact...	196821	28.9	28.9	100	576	46.88	297
+MDD5816297.1	cell surface protein SprA [Bacteroidales bacterium]	4	2	Bacteroidia	CFB group ba...	200643	28.9	28.9	75	588	50.00	2515
+KAM7207901.1	hypothetical protein V8F20_001695 [Naviculisporaceae sp. PSN 640]	1	1	Naviculispor...	ascomycete f...	3127153	28.5	28.5	88	598	46.43	370
+WP_169580101.1	FtsX-like permease family protein [Mycoplasma phocoeninasale]	2	1	Mycoplasma p...	mycoplasmas	2726117	28.5	28.5	75	617	45.83	2783
+MHH1445197.1	DUF5957 family protein [bacterium NPDC059257]	1	1	bacterium NP...	bacteria	3685288	27.7	27.7	84	634	44.44	66
+XP_017547196.2	fer-1-like protein 6 [Pygocentrus nattereri]	5	5	Serrasalmidae	ray-finned f...	42495	28.5	28.5	75	656	50.00	1833
+KAJ7575650.1	hypothetical protein C8J56DRAFT_900954 [Mycena floridula]	1	1	Mycena flori...	basidiomycet...	1033242	28.5	28.5	56	663	61.11	265
+WP_355661647.1	methyl-accepting chemotaxis protein [Bisbaumannia salifodinae]	2	1	Halomonas sa...	g-proteobact...	438745	28.5	28.5	81	665	38.46	557
+WP_059022897.1	Flp pilus assembly protein CpaB [Acetobacter ghanensis]	2	2	Acetobacter ...	a-proteobact...	431306	28.5	28.5	59	669	47.37	295
+WP_372751656.1	T9SS outer membrane translocon Sov/SprA [Labilibaculum sp.]	1	1	Labilibaculu...	CFB group ba...	2060723	28.5	28.5	81	682	50.00	2511
+MIS8690171.1	anti-sigma factor family protein [Pseudovibrio sp. ADAF005]	1	1	Pseudovibrio...	a-proteobact...	3879557	28.5	28.5	47	683	80.00	264
+MGE5838050.1	PEGA domain-containing protein [Acidobacteriota bacterium]	1	1	Acidobacteri...	bacteria	1978231	28.5	28.5	56	684	50.00	725
+AAF91403.1	prion protein, partial [Ovis aries]	1	1	Ovis aries	sheep	9940	28.5	28.5	44	700	92.86	143
+WP_363598793.1	TRAFAC clade GTPase domain-containing protein [Kitasatospora...	1	1	Kitasatospor...	high G+C Gra...	88074	28.5	28.5	97	743	41.94	398
+MIS3625867.1	YqaA family protein [Fidelibacterota bacterium]	1	1	Fidelibacter...	bacteria	2026760	28.1	28.1	91	767	48.48	130
+MIR5295704.1	hypothetical protein [Acidovorax sp.]	1	1	Acidovorax sp.	b-proteobact...	1872122	28.5	28.5	56	774	55.56	337
+XP_065209528.1	probable methyltransferase TARBP1 [Planococcus citri]	1	1	Planococcus ...	citrus mealybug	170843	28.5	28.5	75	776	45.83	1472
+MEM9541868.1	class I SAM-dependent methyltransferase [Cyanobacteria bacteri...	1	1	Cyanobacteri...	cyanobacteria	3023285	28.5	28.5	69	794	45.45	220
+MBP7822904.1	HD domain-containing protein [Candidatus Altimarinota bacterium]	1	1	Candidatus A...	bacteria	2044595	28.1	28.1	59	829	52.63	398
+KAG8440919.1	hypothetical protein GDO86_006598 [Hymenochirus boettgeri]	1	1	Hymenochirus...	Congo dwarf ...	247094	28.1	28.1	72	834	47.83	221
+PID65564.1	MAG: transporter [Gammaproteobacteria bacterium]	1	1	Gammaproteob...	g-proteobact...	1913989	28.1	28.1	72	835	47.83	562
+WP_490430390.1	DNA recombination protein RmuC, partial [Bifidobacterium sp....	2	1	Bifidobacter...	high G+C Gra...	3688093	28.1	28.1	75	846	54.17	347
+MGC3945366.1	hypothetical protein [Chryseolinea sp.]	1	1	Chryseolinea...	CFB group ba...	2059303	28.1	28.1	53	857	70.59	1837
+WP_160496448.1	glutamine--tRNA ligase/YqeY domain fusion protein [Paenibacill...	1	1	Paenibacillu...	firmicutes	2691084	28.1	28.1	44	860	64.29	559
+HIO74091.1	DedA family protein [Fidelibacterota bacterium]	1	1	Fidelibacter...	bacteria	2026760	27.7	27.7	91	889	48.48	101
+WP_026317913.1	argininosuccinate synthase [Algicola sagamiensis]	2	2	Algicola sag...	g-proteobact...	163869	28.1	28.1	44	897	71.43	406
+MCH79437.1	replication protein A1-like protein [Trifolium medium]	1	1	Trifolium me...	eudicots	97028	28.1	28.1	56	905	50.00	450
+RTZ98244.1	MAG: electron transporter RnfB [Deltaproteobacteria bacterium]	2	1	Deltaproteob...	bacteria	2026735	28.1	28.1	94	945	41.94	303
+WP_367671911.1	argininosuccinate synthase [Buchnera aphidicola]	1	1	Buchnera aph...	enterobacteria	9	28.1	28.1	44	952	71.43	404
+HXK00372.1	argininosuccinate synthase [Buchnera sp. (in: enterobacteria)]	1	1	Buchnera sp....	enterobacteria	64684	28.1	28.1	44	952	71.43	404
+WP_158350261.1	argininosuccinate synthase [Buchnera aphidicola]	1	1	Buchnera aph...	enterobacteria	9	28.1	28.1	44	952	71.43	404
+QNS01799.1	MAG: argininosuccinate synthase [Buchnera aphidicola (Pentalon...	1	1	Buchnera aph...	enterobacteria	1309793	28.1	28.1	44	952	71.43	403
+WP_158354430.1	argininosuccinate synthase [Buchnera aphidicola]	4	4	Buchnera aph...	enterobacteria	9	28.1	28.1	44	952	71.43	403
+WP_014498818.1	argininosuccinate synthase [Buchnera aphidicola]	9	9	Buchnera	aphid P-endo...	32199	28.1	28.1	44	952	71.43	403
+WP_367682021.1	argininosuccinate synthase [Buchnera aphidicola]	1	1	Buchnera aph...	enterobacteria	9	28.1	28.1	44	952	71.43	400
+MCY2926124.1	ABC transporter permease [Planctomycetota bacterium]	1	1	Planctomycet...	bacteria	2026780	28.1	28.1	50	986	62.50	1107

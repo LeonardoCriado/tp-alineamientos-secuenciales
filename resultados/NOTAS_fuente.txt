@@ -1,0 +1,9 @@
+Fuente: /home/Leo/Descargas/CV1UE1Z8014-Alignment(1).txt (web NCBI, RID CV1UE1Z8014, BLASTP vs nr, query 133 aa) + 1 GET API CSV del mismo RID.
+blast_vii.tsv: parseo directo de la tabla "Sequences producing significant alignments" (1927 hits), solo cambio de ancho fijo a TSV; valores sin filtrar ni reordenar.
+Columnas: accession, descripcion, nombre_cientifico, nombre_comun, taxid, max_score, total_score, query_cover_pct, evalue, pident, acc_len.
+blast_vii.csv_raw.csv: tabular API crudo del mismo RID (2618 líneas HSP, sin descripción; por eso la descripción se tomó de la tabla web del mismo RID).
+Filtro: blast_vii_filtrado_e100_cov70.tsv con E<=100 y cobertura>=70 -> 1927/1927 (E máx=84, cobertura mín=70%).
+LÍMITES (sin simular faltantes):
+- El archivo web no acredita EXPECT=100 ni HITLIST_SIZE=20000 (no figuran en el encabezado); la corrida API propia CUZ2AG6F016 sí usó esos parámetros pero sigue WAITING tras >16h.
+- Se obtuvieron 1927 hits (tabla web) / 2618 líneas HSP (CSV API), no 20000. La API/web truncan la cantidad (DESCRIPTIONS/ALIGNMENTS y paginado del servidor).
+- El tabular CSV de la API no trae descripción; se completó desde la tabla web del mismo RID sin alterar valores numéricos.
