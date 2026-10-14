@@ -1,27 +1,24 @@
-# Desafío X — BLASTp contra PDB (misma secuencia del IX, RID CXKZKTY6014)
+# Desafío X — BLASTp contra PDB
 
-Fuente: `/home/Leo/Descargas/CXKZKTY6014-Alignment desafio X.txt` (tabular outfmt con `% positives`), 31 hits. Guardado como `resultados/blast_x.tsv` (+ copia cruda `blast_x.tabular_raw.txt`). Comparación contra `resultados/blast_ix.tsv` (nr, 5000 hits).
+En este desafío comparé la búsqueda contra PDB para la misma secuencia del desafío IX (RID CXKZKTY6014) con la búsqueda contra nr. El archivo de entrada original es `CXKZKTY6014-Alignment desafio X.txt`; la tabla tabular está en `resultados/blast_x.tsv` y su copia cruda, en `resultados/blast_x.tabular_raw.txt`. La búsqueda contra PDB devolvió 31 hits, frente a los 5000 de nr guardados en `resultados/blast_ix.tsv`.
 
-Rangos PDB: E 0.0–92 (18 con E<=1e-10, 8 con E>1); %id 22–100; score 26–533; cobertura query 10–100%. Verificado en RCSB: `1LXA` = LpxA de *E. coli* K-12 (gen `lpxA`, EC 2.3.1.129, Raetz & Roderick 1995); `8E62` = N-acetiltransferasa Pcryo_0615 de *Psychrobacter cryohalolentis* (otra vía de azúcares nucleotídicos, mismo plegamiento).
+En PDB, los E-values van de 0.0 a 92: 18 hits tienen E-value ≤ 1e-10 y 8 tienen E-value > 1. La identidad va de 22% a 100%, el score de 26 a 533 y la cobertura del query de 10% a 100%. La entrada `1LXA` corresponde a LpxA de *E. coli* K-12 (`lpxA`, EC 2.3.1.129); `8E62` corresponde a la N-acetiltransferasa Pcryo_0615 de *Psychrobacter cryohalolentis*, de otra vía metabólica pero con un plegamiento relacionado.
 
-![PDB sobre fondo nr](resultados/fig_X_PDB_vs_nr.png)
+![Resultados de PDB y nr](resultados/fig_X_PDB_vs_nr.png)
 
 ## ¿Se obtienen los mismos resultados?
 
-La identificación sí es la misma (LpxA, top hits 100% id / E=0.0 / score 533: `1LXA_A`, `2JF2_A`, `7OKC_A`, `6P9P_A`), pero el listado no: 31 hits contra 5000 de nr. PDB es un subconjunto diminuto y sesgado de nr (solo proteínas con estructura resuelta), así que desaparece la diversidad taxonómica (miles de LpxA bacterianas idénticas en secuencia colapsan a unas pocas cadenas cristalizadas) y el E-value mínimo informativo se pierde entre tanto 0.0. Como buscador de homólogos es mucho menos sensible; como anotador funcional/estructural es más directo.
+La identificación principal coincide: los primeros hits de PDB incluyen estructuras de LpxA con 100% de identidad, cobertura completa, score 533 y E-value 0.0 (`1LXA_A`, `2JF2_A`, `7OKC_A` y `6P9P_A`). Sin embargo, las dos tablas no son equivalentes. PDB contiene proteínas con estructura resuelta, mientras que nr incluye una colección mucho más amplia de secuencias. Por eso, en PDB hay menos hits y menor diversidad de organismos. Además, varios E-values iguales a 0.0 no permiten ordenar los hits más parecidos entre sí usando solo ese valor.
 
-## ¿Qué tipo de hits se recuperan?
+## Tipos de hits recuperados
 
-Cuatro capas, legibles en la tabla:
+1. **Estructuras de LpxA:** `1LXA_A`, `2JF2_A`, `7OKC_A` y `6P9P_A` tienen 100% de identidad y cobertura completa.
+2. **Proteínas con función similar en otras especies:** `6OSS_A` tiene 72,7% de identidad. También aparece un grupo con aproximadamente 41–54% de identidad, incluidos `4EQY_A`, `4E6U_A`, `5JXX_A`, `5DEM_A` y `1J2Z_A`; sus E-values son ≤ 1e-55 y la cobertura es casi completa.
+3. **Homólogos más distantes:** `8E62_A` tiene 27,3% de identidad y E-value 2,7e-17 en un alineamiento de 220 aminoácidos. Está anotada como una N-acetiltransferasa de otra vía. También aparecen `2IU8_A` y `4E75_A`, con E-values cercanos a 1e-9 y 1e-10. En estos casos, el parecido de secuencia es más difícil de interpretar por sí solo; la relación de plegamiento aporta contexto.
+4. **Alineamientos débiles o parciales:** ocho hits tienen E-value > 1, hasta 92, y coberturas de entre 10% y 70%. Entre los ejemplos están `1B7K_A`, `6NPJ_B`, `2Z4H_A` y algunas proteínas ribosomales alineadas en 41 aminoácidos. Estos resultados no son evidencia suficiente de homología con LpxA.
 
-1. La misma proteína cristalizada varias veces: `1LXA_A`, `2JF2_A`, `7OKC_A`, `6P9P_A` (100% id, cobertura 100%, E=0.0).
-2. Ortólogos estructurales (misma función, otra especie): `6OSS_A` (72,7%), y el bloque ~41–54% (`4EQY_A`, `4E6U_A`, `5JXX_A`, `5DEM_A`, `1J2Z_A`...), todos con E<=1e-55 y cobertura casi total.
-3. Homólogos remotos de la superfamilia (mismo plegamiento LβH de hexapéptidos, otra función): `8E62_A` (27,3% id pero E=2,7e-17 en 220 aa: N-acetiltransferasa de otra vía), `2IU8_A`, `4E75_A` (E~1e-9/1e-10). Son los hits más informativos del modo PDB: la secuencia sola parece ruido (~27% id) y la estructura revela parentesco.
-4. Ruido: 8 hits con E>1 (hasta 92), alineamientos cortos y parciales (cobertura 10–70%, p. ej. `1B7K_A`, `6NPJ_B`, `2Z4H_A`, ribosomales `30DR_W`/`5AFU_V`/`5ADX_V` con 41 aa). Se descartan por E-value, como siempre.
+## ¿Cuándo sirve cada base?
 
-## ¿Cuándo es útil este modo?
+La coincidencia con `1LXA_A` permite relacionar la secuencia con una estructura conocida de LpxA. Otros hits cercanos podrían servir para buscar moldes de modelado, pero antes habría que revisar su cobertura y calidad como moldes. Los hits más distantes pueden sugerir una relación de plegamiento, aunque esa interpretación requiere evidencia estructural adicional.
 
-- Confirmar la función con evidencia estructural: si el query pega 100% a una cadena PDB anotada (`1LXA`), la asignación LpxA queda cerrada sin inferencia.
-- Elegir molde para modelado por homología (los ortólogos al 40–70% son moldes ideales) y localizar sitio activo, ligandos y residuos catalíticos por superposición.
-- Detectar el plegamiento/familia cuando la identidad es baja: el caso `8E62_A` muestra que PDB rescata relaciones de superfamilia invisibles en el ruido de nr.
-- No sirve para: censos taxonómicos, encontrar el homólogo más cercano en secuencia, ni descubrir genes nuevos — para eso nr es insustituible. Regla: nr para identificar y medir distancia evolutiva; PDB para pasar de secuencia a estructura y mecanismo.
+En cambio, esta búsqueda de PDB no sirve para estimar la diversidad de LpxA en los organismos ni para encontrar el homólogo más cercano disponible por secuencia: su contenido depende de qué proteínas tienen estructura resuelta. Para este trabajo, nr aporta una lista más amplia de secuencias y PDB permite relacionar los resultados con estructuras disponibles.

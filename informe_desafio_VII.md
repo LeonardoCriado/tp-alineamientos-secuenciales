@@ -1,35 +1,37 @@
-# Desafío VII — Comportamiento E-value vs. %id, Score vs. %id, Score vs. E-value
+# Desafío VII — Relación entre E-value, identidad y score
 
-Fuente: `resultados/blast_vii.tsv` (1927 hits, BLASTP vs nr, query 133 aa, RID web CV1UE1Z8014 + CSV API del mismo RID).
-Filtro pedido (E<=100, cobertura>=70%): 1927/1927 (E máx=84, cobertura mín=70%). El filtrado no recorta nada.
-Rangos: E-value 1e-94–84; %id 19,13–100; Max Score 36,2–285. Ver `resultados/NOTAS_fuente.txt` (límites: no acredita EXPECT=100 ni 20000 hits).
+Para este análisis usé `resultados/blast_vii.tsv`, que reúne 1927 hits de BLASTP contra nr para una secuencia problema de 133 aminoácidos (RID web CV1UE1Z8014 y CSV de la API del mismo RID).
 
-Correlaciones (n=1927):
-- %id vs. log10(E): Spearman −0,821 / Pearson −0,972.
-- %id vs. Score: Spearman +0,808 / Pearson +0,970.
-- Score vs. log10(E): Spearman −0,999 / Pearson −1,000.
+El filtro solicitado fue E-value ≤ 100 y cobertura ≥ 70%. Los 1927 hits cumplen ambas condiciones: el E-value máximo es 84 y la cobertura mínima es 70%. En este caso, aplicar el filtro no elimina filas. Los rangos son: E-value de 1e-94 a 84, identidad de 19,13% a 100% y Max Score de 36,2 a 285. Las notas de fuente detallan qué se pudo recuperar y qué límites tiene la tabla.
+
+Correlaciones (n = 1927):
+
+- Identidad y log10(E-value): Spearman −0,821; Pearson −0,972.
+- Identidad y score: Spearman +0,808; Pearson +0,970.
+- Score y log10(E-value): Spearman −0,999; Pearson −1,000.
 
 ![E-value vs. % identidad](resultados/fig_Evalue_vs_pident.png)
 ![Score vs. % identidad](resultados/fig_Score_vs_pident.png)
 ![Score vs. E-value](resultados/fig_Score_vs_Evalue.png)
 
-## 1. E-value vs. %id — decreciente, no lineal
+## E-value e identidad
 
-A mayor %id, E-value varios órdenes menor (eje log). Extremos: 100% id → E~1e-94 (prión humano/gorila); ~90% → E~1e-80; ~40% → E~1e-18; ~20–25% → E~1–84 (doppel, Staphylococcus, Golgi/endoribonucleasas: ruido de E alto por EXPECT permisivo).
-La dispersión a %id fijo (p. ej. 88–90% con E entre 1e-80 y 1e-70) muestra que el E-value no depende solo del %id sino del largo alineado, gaps y tamaño de la base (nr). Por eso la relación es monótona pero no una función.
+En general, los hits con mayor porcentaje de identidad tienen E-values menores. En el gráfico, esta tendencia se ve como una caída de varios órdenes de magnitud en el eje logarítmico. Por ejemplo, los hits con 100% de identidad tienen E-values cercanos a 1e-94; alrededor de 90% se encuentran cerca de 1e-80, mientras que entre 20% y 25% aparecen valores de 1 a 84.
 
-## 2. Score vs. %id — creciente con saturación
+Para un mismo porcentaje de identidad hay cierta dispersión. Esto es esperable porque el E-value también depende de la longitud y la calidad del alineamiento y del tamaño de la base de datos. Por eso, identidad y E-value están relacionados, pero no hay una correspondencia única entre ambos.
 
-El Score crece con %id (Pearson +0,970), pero se aplana arriba: los topes (~280–285) corresponden a 99–100% id y cobertura 100%; a igual %id alto el score varía poco. Abajo (%id<40) el score cae a 36–90 con más dispersión por alineamientos cortos/parciales y composiciones distintas (tortugas, aves PRIO, Xenopus). El score pondera sustituciones (matriz) y gaps, así que dos hits con igual %id pueden diferir en score.
+## Score e identidad
 
-## 3. Score vs. E-value — casi determinista en log
+El score tiende a aumentar junto con la identidad (Pearson +0,970). En la parte alta, los valores se agrupan cerca de 280–285, sobre todo para hits con 99–100% de identidad y cobertura completa. Para identidades menores al 40%, los scores van aproximadamente de 36 a 90 y están más dispersos.
 
-Correlación ≈ −1 en log10(E). Es lo esperado por Karlin-Altschul (E ≈ K·m·n·e^(−λS)): a más score, E-value exponencialmente menor. La nube es una recta en escala log con mínima dispersión (la que hay viene de ajustes composicionales y longitudes efectivas). E-value y score ordenan casi igual; el E-value agrega el contexto del tamaño del espacio de búsqueda.
+El porcentaje de identidad cuenta las posiciones iguales, mientras que el score también considera las sustituciones y los gaps según el sistema de puntuación. Por eso, dos alineamientos con la misma identidad pueden tener scores distintos.
 
-## Lectura biológica mínima
+## Score y E-value
 
-El query es prión (PrP): identidad 100% con humano, ~99–96% primates, ~90% mamíferos, cayendo hacia marsupiales/monotremas (~75–80%), reptiles/aves (~30–40%) y ruido bacteriano/fúngico con E alto. Cobertura casi siempre ≥90% (mín 70%), o sea alineamiento global del dominio C-terminal, no fragmentos espurios.
+La correlación entre score y log10(E-value) es casi −1. En estos resultados, los scores más altos se asocian con E-values más bajos, de acuerdo con la relación esperada entre score y significancia estadística en BLAST. El tamaño de la base de datos también influye en el E-value, así que este aporta contexto que el score por sí solo no muestra.
 
-## Advertencia
+## Lectura biológica y límites
 
-Con E<=100 entra todo (incluso E=61–84, p. ej. proteínas de tráfico Golgi/ER y endonucleasas), así que el corte pedido no separa homólogos de ruido: para inferencia usar E<<1e-10 y mirar %id+cobertura+taxonomía, no solo el E-value.
+Los hits de mayor identidad corresponden a proteínas priónicas de mamíferos: se observan secuencias idénticas de humano y valores altos en otros primates y mamíferos. A medida que baja la identidad aparecen también alineamientos con proteínas de otros grupos. La tabla incluye hits con E-values altos, por lo que esos resultados no alcanzan por sí solos para afirmar homología funcional.
+
+El filtro E-value ≤ 100 y cobertura ≥ 70% deja pasar todos los hits de esta tabla, incluidos los de E-value entre 61 y 84. Para interpretar los hits como posibles homólogos conviene considerar en conjunto la significancia, la identidad, la cobertura y el organismo de origen. Además, la tabla recuperada no alcanza los 20.000 hits pedidos en los parámetros de la corrida; las notas de fuente explican esta limitación.

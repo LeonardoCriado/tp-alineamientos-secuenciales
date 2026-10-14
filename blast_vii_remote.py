@@ -1,30 +1,31 @@
 #!/usr/bin/env python3
 """
-Desafío VII — BLAST remoto (NCBI URLAPI, sin BLAST local).
-Secuencia: secuencia.fasta
-Parámetros exigidos: PROGRAM=blastp, DATABASE=nr, EXPECT=100, HITLIST_SIZE=20000.
+Desafío VII: búsqueda BLAST remota en NCBI (no usa BLAST local).
+Secuencia de entrada: secuencia.fasta
+Parámetros pedidos: PROGRAM=blastp, DATABASE=nr, EXPECT=100, HITLIST_SIZE=20000.
 
 Uso:
     python3 blast_vii_remote.py [--fasta secuencia.fasta] [--email TU_EMAIL] [--rid RID_EXISTENTE]
 
-Qué hace:
+El script realiza estos pasos:
   1. PUT a https://blast.ncbi.nlm.nih.gov/Blast.cgi (CMD=Put) y obtiene RID/RTOE.
   2. Polling con CMD=Get + FORMAT_OBJECT=SearchInfo hasta Status=READY.
-  3. Descarga tabular (CSV y Text con ALIGNMENT_VIEW=Tabular) + JSON2_S de respaldo.
-  4. Guarda el resultado original sin modificar en resultados/blast_vii.tsv
-     (con identificador, descripción, % identidad, cobertura, E-value y score;
-      si la API no lo permite, lo explica sin simular datos).
+  3. Descarga las tablas (CSV y Text con ALIGNMENT_VIEW=Tabular) y un JSON2_S de respaldo.
+  4. Guarda la tabla en resultados/blast_vii.tsv
+     con identificador, descripción, identidad, cobertura, E-value y score.
+     Si la API no devuelve algún dato, el script lo informa y no inventa valores.
   5. Genera resultados/blast_vii_filtrado_e100_cov70.tsv con E-value<=100 y cobertura>=70%.
 
-Pautas NCBI respetadas (https://blast.ncbi.nlm.nih.gov/doc/blast-help/developerinfo.html):
-  - No contactar al servidor más de 1 vez cada 10 s  -> sleep(10+) entre requests.
-  - No consultar el mismo RID más de 1 vez por minuto -> sleep(60) en polling.
-  - Enviar TOOL y EMAIL para contacto.
-  - Una sola búsqueda (no uso masivo).
+Pautas de NCBI consideradas (https://blast.ncbi.nlm.nih.gov/doc/blast-help/developerinfo.html):
+  - Esperar al menos 10 s entre solicitudes al servidor.
+  - Consultar cada RID como máximo una vez por minuto durante el polling.
+  - Enviar TOOL y EMAIL como datos de contacto.
+  - Usar el servicio para una búsqueda, no de forma masiva.
 
-Evidencia de la corrida del 2026-10-12/13:
-  RID=CUZ2AG6F016, RTOE=25965, QUERY_LEN=133, Status inicial=WAITING/Searching.
-  Ver resultados/RID.txt y resultados/*.log si se re-ejecuta.
+Corrida iniciada el 2026-10-12/13:
+  RID=CUZ2AG6F016, RTOE=25965, QUERY_LEN=133, estado inicial=WAITING/Searching.
+  El RID se guarda en resultados/RID.txt. Los registros de ejecución se generan
+  si se vuelve a correr el script.
 """
 
 import argparse
@@ -49,7 +50,7 @@ DATABASE = "nr"
 EXPECT = "100"
 HITLIST_SIZE = "20000"
 
-QUERY_LEN = 133  # se recalcula desde el fasta; valor esperado para secuencia_problema
+QUERY_LEN = 133  # Se vuelve a calcular desde el FASTA; este es el largo esperado.
 
 
 def log(msg: str):
@@ -106,15 +107,15 @@ def submit(query: str, email: str) -> tuple[str, int | None]:
 
 def poll_until_ready(rid: str, email: str, max_tries: int = 180) -> None:
     for i in range(1, max_tries + 1):
-        # Pauta NCBI: mismo RID no más de 1 vez/min
+        # NCBI recomienda consultar un mismo RID como máximo una vez por minuto.
         time.sleep(60)
         info = http_get({"CMD": "Get", "RID": rid, "FORMAT_OBJECT": "SearchInfo", "TOOL": TOOL})
         m = re.search(r"Status\s*=\s*(\w+)", info)
         status = m.group(1) if m else "SIN_STATUS_HTML"
-        # En HTML el bloque es <!--QBlastInfoBegin Status=WAITING ...-->
+        # En la respuesta HTML, el estado aparece en un bloque QBlastInfo.
         log(f"[POLL {i}] Status={status} {time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())}")
         if "Status=READY" in info:
-            # Verificación extra: intentar HTML de estado
+            # Si el estado es READY, se puede continuar con la descarga.
             return
         if "Status=FAILED" in info:
             raise RuntimeError("BLAST devolvió Status=FAILED")
@@ -126,8 +127,8 @@ def poll_until_ready(rid: str, email: str, max_tries: int = 180) -> None:
 def download_results(rid: str) -> dict:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     files = {}
-    # 1) CSV tabular (ideal para TSV)
-    log("[GET] descargando CSV tabular ...")
+    # 1) CSV tabular, que después se convierte a TSV.
+    log("[GET] descargando tabla CSV...")
     csv_text = http_get({
         "CMD": "Get", "RID": rid, "FORMAT_TYPE": "CSV",
         "ALIGNMENT_VIEW": "Tabular", "DESCRIPTIONS": HITLIST_SIZE,
@@ -136,10 +137,10 @@ def download_results(rid: str) -> dict:
     files["csv"] = OUT_DIR / "blast_vii.csv_raw.csv"
     files["csv"].write_text(csv_text)
     log(f"  -> {files['csv']} ({len(csv_text)} bytes)")
-    time.sleep(11)  # pauta: 1 req / 10 s
+    time.sleep(11)  # Espera más de 10 segundos antes de la siguiente solicitud.
 
-    # 2) Text tabular
-    log("[GET] descargando Text tabular ...")
+    # 2) Tabla en formato Text.
+    log("[GET] descargando tabla en formato Text...")
     tab_text = http_get({
         "CMD": "Get", "RID": rid, "FORMAT_TYPE": "Text",
         "ALIGNMENT_VIEW": "Tabular", "DESCRIPTIONS": HITLIST_SIZE,
@@ -148,10 +149,10 @@ def download_results(rid: str) -> dict:
     files["tab"] = OUT_DIR / "blast_vii.tabular.txt"
     files["tab"].write_text(tab_text)
     log(f"  -> {files['tab']} ({len(tab_text)} bytes)")
-    time.sleep(11)
+    time.sleep(11)  # Espera más de 10 segundos antes de la siguiente solicitud.
 
-    # 3) JSON2_S (trae descripción + HSPs completos, respaldo para unir títulos)
-    log("[GET] descargando JSON2_S ...")
+    # 3) JSON2_S como respaldo para recuperar las descripciones.
+    log("[GET] descargando JSON2_S...")
     js_text = http_get({
         "CMD": "Get", "RID": rid, "FORMAT_TYPE": "JSON2_S",
         "DESCRIPTIONS": HITLIST_SIZE, "ALIGNMENTS": HITLIST_SIZE, "TOOL": TOOL,
@@ -159,10 +160,10 @@ def download_results(rid: str) -> dict:
     files["json"] = OUT_DIR / "blast_vii.json"
     files["json"].write_text(js_text)
     log(f"  -> {files['json']} ({len(js_text)} bytes)")
-    time.sleep(11)
+    time.sleep(11)  # Espera más de 10 segundos antes de la siguiente solicitud.
 
-    # 4) Text completo (inspección humana)
-    log("[GET] descargando Text completo ...")
+    # 4) Resultado Text completo para inspección.
+    log("[GET] descargando resultado completo en formato Text...")
     txt = http_get({
         "CMD": "Get", "RID": rid, "FORMAT_TYPE": "Text",
         "DESCRIPTIONS": HITLIST_SIZE, "ALIGNMENTS": HITLIST_SIZE, "TOOL": TOOL,
@@ -174,7 +175,7 @@ def download_results(rid: str) -> dict:
 
 
 def build_tsv(files: dict, query_len: int) -> Path:
-    """Construye resultados/blast_vii.tsv original (sin filtrar).
+    """Construye la tabla de resultados sin aplicar filtros.
 
     El tabular NCBI (outfmt6-like) NO trae 'descripción' ni 'cobertura' directa:
       columnas típicas: qacc sacc pident length mismatch gapopen qstart qend sstart send evalue bitscore
@@ -184,7 +185,7 @@ def build_tsv(files: dict, query_len: int) -> Path:
     csv_path = files["csv"]
     json_path = files["json"]
     lines = csv_path.read_text().splitlines()
-    # El CSV tabular de NCBI puede venir con líneas comentario '#' o sin header.
+    # El CSV tabular de NCBI puede traer comentarios '#' o no incluir encabezado.
     rows = [l for l in lines if l.strip() and not l.startswith("#")]
     header = None
     if rows and any(k in rows[0].lower() for k in ["query", "subject", "evalue", "pident", "%"]):
@@ -194,11 +195,11 @@ def build_tsv(files: dict, query_len: int) -> Path:
     if header:
         log(f"[TSV] header tabular: {header}")
 
-    # Mapa sacc -> descripción desde JSON2_S
+    # Mapa de accesiones a descripciones, tomado de JSON2_S.
     descr = {}
     try:
         js = json.loads(json_path.read_text())
-        # JSON2_S: BlastOutput2 -> report -> results -> search -> hits -> hsps
+        # En JSON2_S, la lista de hits está dentro de report/results/search.
         results = js.get("BlastOutput2", {}).get("report", {}).get("results", {}).get("search", {}).get("hits", [])
         for h in results:
             acc = h.get("acc") or h.get("accession") or str(h.get("num", ""))
@@ -210,7 +211,7 @@ def build_tsv(files: dict, query_len: int) -> Path:
                 pass
         log(f"[TSV] descripciones extraídas de JSON: {len(descr)}")
     except Exception as e:
-        log(f"[TSV] AVISO: no se pudo parsear JSON para descripciones: {e}")
+        log(f"[TSV] AVISO: no se pudieron leer las descripciones del JSON: {e}")
 
     out = OUT_DIR / "blast_vii.tsv"
     cols = ["sacc", "descripcion", "pident", "cobertura_query_pct",
@@ -222,7 +223,7 @@ def build_tsv(files: dict, query_len: int) -> Path:
         n = 0
         for r in rows:
             p = [c.strip() for c in r.split(",")]
-            # outfmt6 estándar de 12 columnas; si NCBI devuelve más/menos, se adapta sin inventar
+            # outfmt6 suele tener 12 columnas. Si el formato cambia, se omiten filas incompletas.
             if len(p) < 12:
                 continue
             qacc, sacc, pident, length, mismatch, gapopen, qstart, qend, sstart, send, evalue, bitscore = p[:12]
@@ -241,10 +242,11 @@ def build_tsv(files: dict, query_len: int) -> Path:
                 "alen": length, "mismatch": mismatch, "gapopen": gapopen,
             })
             n += 1
-    log(f"[TSV] {out} con {n} hits (original, sin filtrar).")
+    log(f"[TSV] Se guardaron {n} hits sin filtrar en {out}.")
     if n < int(HITLIST_SIZE):
-        log(f"[TSV] NOTA: se pidieron {HITLIST_SIZE} hits pero la API devolvió {n}. "
-            "Límite de la API (DESCRIPTIONS/ALIGNMENTS o truncado del servidor). No se simulan faltantes.")
+        log(f"[TSV] NOTA: se pidieron {HITLIST_SIZE} hits y la API devolvió {n}. "
+            "La respuesta puede estar limitada por DESCRIPTIONS/ALIGNMENTS o por el servidor. "
+            "No se agregan hits faltantes.")
     return out
 
 
@@ -265,7 +267,7 @@ def filtrar_e100_cov70(tsv_in: Path) -> Path:
             if ev <= 100 and cov >= 70:
                 w.writerow(row)
                 kept += 1
-    log(f"[FILTRO] E-value<=100 y cobertura>=70%: {kept}/{total} -> {out}")
+    log(f"[FILTRO] E-value<=100 y cobertura>=70%: {kept} de {total} hits -> {out}")
     return out
 
 
@@ -273,8 +275,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--fasta", default=str(FASTA_DEFAULT))
     ap.add_argument("--email", default="student@example.org",
-                    help="Email de contacto (pauta NCBI). Reemplazar por el real.")
-    ap.add_argument("--rid", default=None, help="Reanudar un RID existente sin re-enviar PUT.")
+                    help="Email de contacto, según la pauta de NCBI. Reemplazá el valor de ejemplo.")
+    ap.add_argument("--rid", default=None, help="Reanudar una búsqueda existente con su RID.")
     args = ap.parse_args()
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -289,16 +291,16 @@ def main():
     else:
         rid, rtoe = submit(query, args.email)
         (OUT_DIR / "RID.txt").write_text(rid + "\n")
-        log(f"Si el script se interrumpe, reanudar con: python3 {Path(__file__).name} --rid {rid}")
-        # Primera espera: RTOE es estimación; el polling ya espera 60 s entre intentos
+        log(f"Si se interrumpe el script, podés reanudar con: python3 {Path(__file__).name} --rid {rid}")
+        # RTOE es un tiempo estimado; durante el polling se esperan 60 s entre consultas.
         if rtoe and rtoe > 60:
-            log(f"RTOE={rtoe}s estimado por NCBI; el polling consultará cada 60 s (puede tardar).")
+            log(f"NCBI estima {rtoe} s de espera (RTOE); se consultará el estado cada 60 s.")
 
     poll_until_ready(rid, args.email)
     files = download_results(rid)
     tsv = build_tsv(files, QUERY_LEN)
     filtrar_e100_cov70(tsv)
-    log("Listo. Revisar resultados/blast_vii.tsv y resultados/blast_vii_filtrado_e100_cov70.tsv")
+    log("Listo. Revisá resultados/blast_vii.tsv y resultados/blast_vii_filtrado_e100_cov70.tsv")
 
 
 if __name__ == "__main__":

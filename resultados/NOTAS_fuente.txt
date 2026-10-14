@@ -1,9 +1,16 @@
-Fuente: /home/Leo/Descargas/CV1UE1Z8014-Alignment(1).txt (web NCBI, RID CV1UE1Z8014, BLASTP vs nr, query 133 aa) + 1 GET API CSV del mismo RID.
-blast_vii.tsv: parseo directo de la tabla "Sequences producing significant alignments" (1927 hits), solo cambio de ancho fijo a TSV; valores sin filtrar ni reordenar.
-Columnas: accession, descripcion, nombre_cientifico, nombre_comun, taxid, max_score, total_score, query_cover_pct, evalue, pident, acc_len.
-blast_vii.csv_raw.csv: tabular API crudo del mismo RID (2618 líneas HSP, sin descripción; por eso la descripción se tomó de la tabla web del mismo RID).
-Filtro: blast_vii_filtrado_e100_cov70.tsv con E<=100 y cobertura>=70 -> 1927/1927 (E máx=84, cobertura mín=70%).
-LÍMITES (sin simular faltantes):
-- El archivo web no acredita EXPECT=100 ni HITLIST_SIZE=20000 (no figuran en el encabezado); la corrida API propia CUZ2AG6F016 sí usó esos parámetros pero sigue WAITING tras >16h.
-- Se obtuvieron 1927 hits (tabla web) / 2618 líneas HSP (CSV API), no 20000. La API/web truncan la cantidad (DESCRIPTIONS/ALIGNMENTS y paginado del servidor).
-- El tabular CSV de la API no trae descripción; se completó desde la tabla web del mismo RID sin alterar valores numéricos.
+## Fuente del desafío VII
+
+La tabla `blast_vii.tsv` se armó a partir del archivo de alineamiento web de NCBI `CV1UE1Z8014-Alignment(1).txt` y de una descarga CSV de la API para el mismo RID. El archivo web corresponde a BLASTP contra nr, con un query de 133 aminoácidos.
+
+## Archivos y procesamiento
+
+- `blast_vii.tsv`: tabla tomada de «Sequences producing significant alignments» (1927 hits). Se pasó de ancho fijo a TSV, sin filtrar ni reordenar los valores.
+- `blast_vii.csv_raw.csv`: descarga tabular cruda de la API para el mismo RID (2618 líneas HSP, sin descripciones). Las descripciones de `blast_vii.tsv` se tomaron de la tabla web del mismo RID.
+- Columnas de `blast_vii.tsv`: accession, descripción, nombre científico, nombre común, taxid, max score, total score, cobertura del query, E-value, identidad y longitud de la secuencia.
+- `blast_vii_filtrado_e100_cov70.tsv`: resultado de aplicar E-value ≤ 100 y cobertura ≥ 70% a `blast_vii.tsv`. Se conservaron los 1927 hits (E-value máximo 84; cobertura mínima 70%).
+
+## Limitaciones
+
+El archivo web no muestra los parámetros EXPECT=100 ni HITLIST_SIZE=20000 en su encabezado, así que no permite comprobarlos para esa corrida. El script guardó una corrida propia con esos parámetros bajo RID CUZ2AG6F016, pero seguía en estado WAITING después de más de 16 horas.
+
+La tabla web contiene 1927 hits y el CSV de la API 2618 líneas HSP, no 20000 hits. La respuesta web/API puede limitar la cantidad de descripciones y alineamientos que devuelve. No se completaron los registros faltantes de forma artificial. El CSV de la API tampoco incluye descripciones; por eso se usó la tabla web del mismo RID para agregar esa columna, sin modificar los valores numéricos.

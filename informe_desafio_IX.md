@@ -1,22 +1,27 @@
 # Desafío IX — Identificación de la proteína problema (262 aa)
 
-Fuente: `CXJR2NNZ014-Alignment desafio iX .txt` (BLASTP vs nr, query 262 aa, RID CXJR2NNZ014). Verifiqué que el query del archivo es idéntico al enunciado (reconstrucción de los HSP = 262/262 residuos) y el primer alineamiento detallado muestra identidad total a lo largo de toda la secuencia con Expect 0.0. Tabla parseada sin filtrar a `resultados/blast_ix.tsv` (5000 hits).
+La fuente es `CXJR2NNZ014-Alignment desafio iX .txt`, un resultado de BLASTP contra nr (query de 262 aminoácidos, RID CXJR2NNZ014). Reconstruí el query a partir de los HSP y coincide con la secuencia completa del enunciado (262/262 residuos). El primer alineamiento detallado tiene identidad completa y Expect 0.0. La tabla de 5000 hits, sin filtrar, está en `resultados/blast_ix.tsv`.
 
-## Identidad: acil-ACP–UDP-N-acetilglucosamina O-aciltransferasa (LpxA)
+## Identificación probable: LpxA
 
-- Proteína: **acyl-ACP–UDP-N-acetylglucosamine O-acyltransferase**, gen `lpxA`, EC 2.3.1.129 — primera enzima de la vía de Raetz (biosíntesis del lípido A, componente del lipopolisacárido de Gram-negativos).
-- Evidencia: 4714/5000 hits (94%) anotados con ese nombre (4085 + 629 MULTISPECIES); top hit `WP_000565966.1` con 100% identidad, 100% cobertura, score 533, E=0.0. Estructuras cristalográficas entre los top (cadenas `2JF2_A`, `7OKC_A` de *E. coli*).
-- Origen más probable del query: *Escherichia coli* (taxid 562, 693 hits; el resto son enterobacterias cercanas: *Klebsiella* 573, *Salmonella* 28901, *Vibrio* 666).
-- Fuerza de la asignación: el peor hit de los 5000 tiene E=2e-108 y 57% identidad — los 5000 son homólogos significativos, sin cola de ruido. No hay ambigüedad posible.
+Los resultados apuntan a la acil-ACP–UDP-N-acetilglucosamina O-aciltransferasa (LpxA), codificada por `lpxA` y asociada a la primera etapa de la vía de Raetz para sintetizar lípido A, parte del lipopolisacárido de bacterias gramnegativas.
 
-## Comportamiento E-value vs. %id, Score vs. %id, Score vs. E-value (n=5000)
+La anotación aparece en 4714 de los 5000 hits (94%; 4085 registros con ese nombre y 629 MULTISPECIES). El hit superior es `WP_000565966.1`, con 100% de identidad y cobertura, score 533 y E-value 0.0. Entre los resultados también hay estructuras de LpxA de *E. coli*, como `2JF2_A` y `7OKC_A`.
 
-Rangos: E 0.0–2e-108 (805 con E=0.0, todos E<=1e-10); %id 57–100 (mediana alta, 2467 con id>=90); score 322–533; cobertura 61–100 (4492 con 100%).
+El organismo más probable para el query es *Escherichia coli*: hay 693 hits asociados al taxid 562. También aparecen enterobacterias cercanas, entre ellas *Klebsiella* (573), *Salmonella* (28901) y *Vibrio* (666). Esto permite asignar el query a LpxA con bastante confianza; la tabla por sí sola no determina la cepa exacta.
 
-Correlaciones: %id–log10E Spearman −0,872; %id–score +0,871; score–log10E Spearman −0,998. Mismo patrón de los desafíos VII–VIII: el E cae en log con %id, el score crece con %id, y score–log(E) es casi determinista. Detalle: el Pearson score–log(E) baja a −0,803 solo por el piso de E=0.0 (805 puntos clavados en 1e-300 tras el clipping); el orden (Spearman) sigue ≈ −1.
+El hit con menor score entre los 5000 tiene E-value 2e-108 e identidad de 57%. En el conjunto recuperado, incluso los hits más divergentes tienen valores estadísticamente muy significativos. Esto respalda que son homólogos de LpxA, aunque la función de cada secuencia no se confirma solo con el E-value.
+
+## Relación entre E-value, identidad y score
+
+En los 5000 hits, los E-values van de 0.0 a 2e-108; 805 aparecen como 0.0 y todos son ≤ 1e-10. La identidad va de 57% a 100% (2467 hits tienen al menos 90% de identidad), los scores de 322 a 533 y la cobertura de 61% a 100%. 4492 alineamientos cubren el 100% del query.
+
+Las correlaciones de Spearman son: identidad y log10(E-value), −0,872; identidad y score, +0,871; score y log10(E-value), −0,998. El patrón coincide con lo visto en los desafíos VII y VIII: los hits de mayor identidad tienden a tener scores más altos y E-values menores.
 
 ![E-value vs. % identidad](resultados/fig_IX_Evalue_vs_pident.png)
 ![Score vs. % identidad](resultados/fig_IX_Score_vs_pident.png)
 ![Score vs. E-value](resultados/fig_IX_Score_vs_Evalue.png)
 
-A diferencia del VII (prión eucariota con cola de ruido bacteriano hasta E=84), aquí no hay fondo espurio: la proteína es muy conservada en bacterias (mínimo 57% id) y la nube es compacta. El gráfico E vs. %id muestra el "techo" de E=0.0 como línea horizontal de 805 puntos —límite de precisión del reporte, no biología— y por debajo la caída esperada hacia 2e-108 en los homólogos más divergentes (p. ej. *Aeromonas*, 58,8% id, score 325, todavía 100% cobertura).
+La correlación de Pearson entre score y log10(E-value) es −0,803, menos cercana a −1 que la de Spearman. En 805 filas el E-value figura como 0.0; para graficar logaritmos esos valores se reemplazaron por un piso numérico. Ese empate artificial afecta la correlación de Pearson, mientras que Spearman conserva mejor el orden de los valores.
+
+A diferencia del desafío VII, en estos 5000 hits no se observa una cola de E-values altos: el más alto informado es 2e-108. En el gráfico de E-value aparece un grupo de 805 puntos en 0.0, que refleja el límite de precisión del formato del reporte. Por debajo de ese piso se observan E-values muy pequeños, incluso para secuencias más divergentes; por ejemplo, un hit de *Aeromonas* tiene 58,8% de identidad, score 325 y cobertura completa.

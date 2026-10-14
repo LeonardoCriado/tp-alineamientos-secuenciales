@@ -1,47 +1,57 @@
-# Desafío VIII — Query completa vs. mitad vs. cuarto
+# Desafío VIII — Comparación entre la secuencia completa y dos fragmentos
 
-Fragmentos verificados en los alineamientos: mitad = 66 aa N-terminales (`VVGGL...NITIKQ`), cuarto = 32 aa N-terminales (`VVGGL...RYYRE`), ambos prefijos exactos de la secuencia problema (133 aa).
+Revisé los alineamientos para confirmar qué fragmentos se usaron. La mitad corresponde a los 66 aminoácidos iniciales (`VVGGL...NITIKQ`) y el cuarto a los 32 aminoácidos iniciales (`VVGGL...RYYRE`); ambos son prefijos de la secuencia problema de 133 aminoácidos.
 
-| Query | RID web | Longitud | Base | Hits tabla |
-|---|---|---|---|---|
+| Query | RID web | Longitud | Base | Hits en la tabla |
+|---|---|---:|---|---:|
 | Completa | CV1UE1Z8014 | 133 aa | nr | 1927 (`resultados/blast_vii.tsv`) |
 | Mitad | CXHB5NFK016 | 66 aa | ClusteredNR | 665 (`resultados/blast_viii_mitad.tsv`) |
 | Cuarto | CXHPJ65D014 | 32 aa | ClusteredNR | 279 (`resultados/blast_viii_cuarto.tsv`) |
 
-Advertencia: completa usó `nr` y las cortas `ClusteredNR` (colapsa redundancia), así que los N de hits no son estrictamente comparables; las tendencias de score/E-value sí lo son.
+La búsqueda completa se hizo contra nr y las de los fragmentos contra ClusteredNR, que agrupa secuencias redundantes. Por eso, la cantidad de hits no se puede comparar directamente entre las tres búsquedas. Las diferencias de E-value y score sirven para describir estos resultados, aunque también dependen de la base consultada.
 
-Resumen numérico (mediana entre paréntesis):
+## Resumen de resultados
 
-| | E-value (med) | %id (med) | Max Score (med) | Cobertura (med) | E<=1e-10 | E>10 |
-|---|---|---|---|---|---|---|
+Los rangos se muestran como mínimo–máximo y, entre paréntesis, la mediana.
+
+| Query | E-value | Identidad (%) | Max Score | Cobertura (%) | E ≤ 1e-10 | E > 10 |
+|---|---|---|---|---|---:|---:|
 | Completa | 1e-94–84 (1e-71) | 19–100 (88,1) | 36–285 (224) | 70–100 (95) | 91,1% | 0,9% |
 | Mitad | 4e-42–997 (7e-4) | 24–100 (45,3) | 29–144 (47) | 21–100 (89) | 25,6% | 34,1% |
 | Cuarto | 8e-14–986 (3e-6) | 38–100 (88,0) | 28–69 (51) | 38–100 (78) | 9,7% | 37,6% |
 
-Correlaciones (Spearman): %id–log10E: −0,821 / −0,725 / −0,840; %id–score: +0,808 / +0,723 / +0,846; score–log10E: −0,999 / −0,997 / −0,994 (completa/mitad/cuarto).
+Correlaciones de Spearman (completa / mitad / cuarto):
 
-![E-value vs. %id](resultados/fig_VIII_Evalue_vs_pident_comp.png)
-![Score vs. %id](resultados/fig_VIII_Score_vs_pident_comp.png)
+- Identidad y log10(E-value): −0,821 / −0,725 / −0,840.
+- Identidad y score: +0,808 / +0,723 / +0,846.
+- Score y log10(E-value): −0,999 / −0,997 / −0,994.
+
+![E-value vs. % identidad](resultados/fig_VIII_Evalue_vs_pident_comp.png)
+![Score vs. % identidad](resultados/fig_VIII_Score_vs_pident_comp.png)
 ![Score vs. E-value](resultados/fig_VIII_Score_vs_Evalue_comp.png)
 ![Cobertura](resultados/fig_VIII_cobertura_hist.png)
 
-## 1. E-value vs. %id
+## E-value e identidad
 
-La forma se conserva (nube decreciente en log), pero se desplaza hacia arriba al acortar: el mejor E pasa de 1e-94 a 4e-42 a 8e-14. Cada mitad de longitud cuesta decenas de órdenes de magnitud, lo esperado por Karlin-Altschul (E ~ K·m·n·e^(−λS), con S proporcional a la longitud). El gráfico del cuarto "flota" completo sobre el de la completa: un 100% id que en 133 aa da E~1e-94 en 32 aa solo llega a E~1e-13. Además crece la cola de ruido: E>10 pasa de 0,9% a ~35–38% (transportadores ABC, reguladores bacterianos con E~100–1000 que en la corrida completa ni aparecían o quedaban abajo).
+En las tres búsquedas, los hits de mayor identidad tienden a tener E-values menores. Al usar fragmentos, los mejores E-values observados son menos pequeños: 1e-94 para la secuencia completa, 4e-42 para la mitad y 8e-14 para el cuarto. Esto coincide con que un alineamiento corto acumula menos evidencia que uno largo, aunque las diferencias entre bases de datos también afectan la comparación.
 
-## 2. Score vs. %id
+En las búsquedas de los fragmentos aumenta la proporción de hits con E-value mayor que 10: pasa de 0,9% en la búsqueda completa a 34,1% y 37,6%. Esa parte de los resultados requiere cautela; con valores así de altos, no se puede interpretar cada hit como homólogo solo por aparecer en la tabla.
 
-El score máximo escala linealmente con la longitud: 285/144/69 ≈ 2,15 bits por residuo en los tres casos. La pendiente se conserva pero el rango se comprime (eje Y: 36–285 vs. 28–69), así que el poder de separación colapsa: en el cuarto, un prión real (score ~68) y un falso positivo (score ~28–35) se separan por apenas ~2x, contra ~8x en la completa. La señal taxonómica del tope se mantiene (prión humano/bovino/ovino al frente en los tres), pero el "margen de seguridad" desaparece.
+## Score e identidad
 
-## 3. Score vs. E-value
+El score máximo baja de 285 a 144 y 69 al pasar de la secuencia completa a la mitad y al cuarto. Dividir esos máximos por la longitud da valores parecidos, alrededor de 2,15 bits por aminoácido. Es una comparación descriptiva de estas tres corridas; no implica que todos los alineamientos escalen de manera uniforme.
 
-Indistinguible en forma entre las tres: recta en log con correlación ≈ −1 siempre. Es la relación matemática score→E-value, independiente de la biología; solo cambia el tramo del eje que ocupa cada query (285→1e-94 vs. 69→8e-14). Confirma que E-value y score ordenan igual dentro de cada corrida, pero los valores absolutos no son comparables entre longitudes.
+En las tres búsquedas, los mejores hits siguen correspondiendo a proteínas priónicas. Sin embargo, con el fragmento de 32 aminoácidos el rango de scores es más acotado y hay menos información de secuencia para distinguir hits cercanos. La identidad por sí sola tampoco alcanza para clasificar los hits más débiles.
+
+## Score y E-value
+
+La asociación entre score y log10(E-value) sigue siendo muy marcada en las tres tablas (Spearman entre −0,994 y −0,999). Dentro de cada búsqueda, los scores mayores suelen acompañarse de E-values menores. Los valores absolutos entre búsquedas no son directamente equivalentes: cambia la longitud del query y, en este caso, también la base de datos.
 
 ## Conclusiones
 
-1. Acortar el query degrada exponencialmente la significancia: el mejor E pierde ~50 órdenes (133→66 aa) y ~28 más (66→32 aa); la fracción con E<=1e-10 cae 91% → 26% → 10%.
-2. El score máximo es proporcional a la longitud (~2,15 bits/aa); sirve para normalizar, pero con 32 aa el rango útil es tan chico que verdaderos y espurios se mezclan.
-3. Las tres relaciones cualitativas no cambian (solo se trasladan/comprimen): el efecto de longitud es cuantitativo, no un régimen distinto.
-4. La cobertura se ensancha hacia abajo (mín 70→21→38, med 95→89→78): con queries cortos aparecen más alineamientos parciales.
-5. La mención "prion" en descripción cae 90% → 45–61% y el ruido de E alto domina la cola: con 1/4 de secuencia el top sigue siendo prión, pero el resto del listado deja de ser interpretable como homología.
-6. Regla práctica: fragmentos cortos sirven para confirmar una identidad ya sospechada (el top hit resiste), no para descubrir homólogos lejanos; para eso hace falta longitud, y los cortes de E deben endurecerse al acortar (E<=100, pedido en el VII, aquí dejaría pasar ~1/3 de ruido con E>10).
+1. En estos resultados, el mejor E-value aumenta al acortar el query: de 1e-94 con la secuencia completa a 4e-42 con la mitad y 8e-14 con el cuarto. También baja la proporción de hits con E ≤ 1e-10: 91,1%, 25,6% y 9,7%, respectivamente.
+2. Los scores máximos son aproximadamente proporcionales a la longitud en estas tres corridas, pero los fragmentos ofrecen menos información para separar resultados débiles.
+3. Las relaciones generales entre identidad, score y E-value se mantienen. Las diferencias observadas también pueden depender del uso de nr para la secuencia completa y ClusteredNR para los fragmentos.
+4. La cobertura mínima y mediana son menores en las corridas con fragmentos (mínimos de 70%, 21% y 38%; medianas de 95%, 89% y 78%). Esto indica que en esas tablas aparecen más alineamientos que cubren solo una parte del query.
+5. Los mejores hits siguen siendo priones, pero eso no vuelve confiable al resto de la tabla: al acortar la secuencia, aumenta la proporción de E-values altos y se necesita evaluar cada hit con más cuidado.
+6. En estas búsquedas, los fragmentos recuperan los hits más cercanos, pero la evidencia es más limitada para caracterizar relaciones lejanas. La longitud, el E-value, la cobertura, la identidad y la base de datos deben considerarse juntos.
