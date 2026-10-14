@@ -20,11 +20,7 @@ Los rangos se muestran como mínimo–máximo y, entre paréntesis, la mediana.
 | Mitad | 4e-42–997 (7e-4) | 24–100 (45,3) | 29–144 (47) | 21–100 (89) | 25,6% | 34,1% |
 | Cuarto | 8e-14–986 (3e-6) | 38–100 (88,0) | 28–69 (51) | 38–100 (78) | 9,7% | 37,6% |
 
-Correlaciones de Spearman (completa / mitad / cuarto):
 
-- Identidad y log10(E-value): −0,821 / −0,725 / −0,840.
-- Identidad y score: +0,808 / +0,723 / +0,846.
-- Score y log10(E-value): −0,999 / −0,997 / −0,994.
 
 ![E-value vs. % identidad](resultados/fig_VIII_Evalue_vs_pident_comp.png)
 ![Score vs. % identidad](resultados/fig_VIII_Score_vs_pident_comp.png)
